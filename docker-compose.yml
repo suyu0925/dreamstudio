@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dreamstudio:
+    container_name: dreamstudio
+    build:
+      context: .
+    image: "dreamstudio:0.0.1"
+    restart: always
+    environment:
+      - STABILITY_KEY=${STABILITY_KEY}
+      - BAIDU_FANYI_APPID=${BAIDU_FANYI_APPID}
+      - BAIDU_FANYI_KEY=${BAIDU_FANYI_KEY}
+      - PORT=${PORT}
+    ports:
+      - ${PORT}:${PORT}
